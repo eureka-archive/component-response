@@ -16,12 +16,11 @@ use Eureka\Component\Response\Header\Header;
  * Class to manage response for in html format
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 class Html extends Response
 {
     /**
-     * response_json constructor.
+     * Class constructor.
      */
     public function __construct()
     {
@@ -31,7 +30,7 @@ class Html extends Response
     /**
      * Render content.
      *
-     * @return $this
+     * @return string
      * @throws \LogicException
      */
     public function renderContent()
@@ -44,6 +43,6 @@ class Html extends Response
             throw new \LogicException('Cannot render content: it is an array!');
         }
 
-        echo (string) $this->content;
+        return (string) $this->content;
     }
 }

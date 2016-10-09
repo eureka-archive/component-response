@@ -16,14 +16,13 @@ use Eureka\Component\Template\TemplateInterface;
  * Class to manage HTML response with Template class.
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 class Template extends Html
 {
     /**
      * Render content.
      *
-     * @return $this
+     * @return string
      * @throws \LogicException
      */
     public function renderContent()

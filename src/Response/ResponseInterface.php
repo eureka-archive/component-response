@@ -13,7 +13,6 @@ namespace Eureka\Component\Response;
  * Interface response
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 interface ResponseInterface {
 

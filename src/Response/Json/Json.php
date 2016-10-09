@@ -16,18 +16,16 @@ use Eureka\Component\Response\Header\Header;
  * Class to manage response in json format
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 abstract class Json extends Response
 {
-
     /**
-     * @var integer $option Json encode options
+     * @var int $option Json encode options
      */
     private $option = 0;
 
     /**
-     * @var integer $depth Json encode max depth
+     * @var int $depth Json encode max depth
      */
     private $depth = 512;
 
@@ -40,7 +38,7 @@ abstract class Json extends Response
     }
 
     /**
-     * Encode content into json format.
+     * Encode content into json format & display it.
      *
      * @return string
      * @throws \RuntimeException
@@ -53,14 +51,14 @@ abstract class Json extends Response
             throw new \RuntimeException('Json encode error ! (error: ' . json_last_error_msg() . ')');
         }
 
-        echo $string;
+        return $string;
     }
 
     /**
      * Json encode option (use json constants)
      *
-     * @param  integer $option
-     * @return $this
+     * @param  int $option
+     * @return self
      */
     public function setOption($option = 0)
     {
@@ -72,8 +70,8 @@ abstract class Json extends Response
     /**
      * Json encode max depth
      *
-     * @param  integer $depth
-     * @return $this
+     * @param  int $depth
+     * @return self
      */
     public function setDepth($depth = 512)
     {

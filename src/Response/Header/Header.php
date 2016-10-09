@@ -16,18 +16,16 @@ use Eureka\Component\Response\ResponseInterface;
  * Implement response_interface to allow an instance of this class as a valid response.
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 class Header implements ResponseInterface
 {
-
     /**
-     * @var boolean $isReplace
+     * @var bool $isReplace
      */
     private $isReplace = true;
 
     /**
-     * @var integer $httpCode Http Code
+     * @var int $httpCode Http Code
      */
     private $httpCode = null;
 
@@ -37,11 +35,11 @@ class Header implements ResponseInterface
     private $content = '';
 
     /**
-     * response_header constructor.
+     * Class constructor.
      *
-     * @param string  $content
-     * @param boolean $isReplace
-     * @param integer $httpCode
+     * @param string $content
+     * @param bool   $isReplace
+     * @param int    $httpCode
      */
     public function __construct($content, $isReplace = true, $httpCode = null)
     {
@@ -53,7 +51,7 @@ class Header implements ResponseInterface
     /**
      * Send the header
      *
-     * @return $this
+     * @return self
      */
     public function send()
     {
@@ -66,7 +64,7 @@ class Header implements ResponseInterface
      * Set header content
      *
      * @param  string $content
-     * @return $this
+     * @return self
      * @throws \Exception
      */
     protected function setContent($content)
@@ -83,8 +81,8 @@ class Header implements ResponseInterface
     /**
      * Set is replace content in header if already exists.
      *
-     * @param  boolean $isReplace
-     * @return $this
+     * @param  bool $isReplace
+     * @return self
      */
     protected function setIsReplace($isReplace)
     {
@@ -96,8 +94,8 @@ class Header implements ResponseInterface
     /**
      * Set http code for the header
      *
-     * @param  integer $httpCode
-     * @return $this
+     * @param  int $httpCode
+     * @return self
      * @throws \DomainException
      */
     protected function setHttpCode($httpCode = null)

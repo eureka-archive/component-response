@@ -13,15 +13,14 @@ namespace Eureka\Component\Response\Header;
  * Class for response HTTP Code list
  *
  * @author  Romain Cottard
- * @version 1.0.0
  * @see     http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
  */
 class HttpCode
 {
 	/**
-	 * @var array $http_codes List of http code with label
+	 * @var array $httpCodes List of http code with label
 	 */
-	protected static $http_codes = array(
+	protected static $httpCodes = array(
         100 => 'Continue',
         101 => 'Switching Protocols',
         102 => 'Processing',
@@ -92,7 +91,7 @@ class HttpCode
 	/**
 	 * Return text for the specified http code.
 	 *
-	 * @param  integer $code
+	 * @param  int $code
 	 * @return string
 	 * @throws \DomainException
 	 */
@@ -104,17 +103,17 @@ class HttpCode
             throw new \DomainException('Http Code does not exist!');
         }
 
-        return self::$http_codes[$code];
+        return self::$httpCodes[$code];
 	}
 
 	/**
 	 * Check if http code exists
 	 *
-	 * @param  integer $code
-	 * @return boolean
+	 * @param  int $code
+	 * @return bool
 	 */
 	public static function exists($code)
     {
-        return isset(self::$http_codes[(int) $code]);
+        return isset(self::$httpCodes[(int) $code]);
 	}
 }

@@ -14,8 +14,12 @@
 
   "autoload": {
     "psr-4": {
-      "Eureka\\Component\\Response\\": "./"
+      "Eureka\\Component\\Response\\": "./src/Response/"
     }
+  },
+
+  "require": {
+    "eureka/component-template": "^1.0.0"
   }
 
 }

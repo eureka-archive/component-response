@@ -13,7 +13,6 @@ namespace Eureka\Component\Response;
  * Factory for response instances.
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 class Factory
 {
@@ -78,7 +77,6 @@ class Factory
             case self::FORMAT_TEXT:
             default:
                 throw new \DomainException('Unsupported output format !');
-
         }
 
         switch ($engine) {
@@ -104,5 +102,4 @@ class Factory
 
         return $responseInstance;
     }
-
 }

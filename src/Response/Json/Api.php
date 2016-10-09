@@ -13,12 +13,11 @@ namespace Eureka\Component\Response\Json;
  * Class to manage response for API
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 class Api extends Json
 {
     /**
-     * @var boolean $isSuccess If request is a success or not.
+     * @var bool $isSuccess If request is a success or not.
      */
     private $isSuccess = true;
 
@@ -52,7 +51,7 @@ class Api extends Json
     /**
      * Get if request is a success or not.
      *
-     * @return boolean
+     * @return bool
      */
     final public function isSuccess()
     {
@@ -63,7 +62,7 @@ class Api extends Json
      * Set if request is a success.
      *
      * @param  boolean $isSuccess
-     * @return $this
+     * @return self
      */
     final public function setIsSuccess($isSuccess)
     {
@@ -86,7 +85,7 @@ class Api extends Json
      * Set error code.
      *
      * @param  string $code
-     * @return $this
+     * @return self
      */
     final public function setErrorCode($code)
     {
@@ -109,7 +108,7 @@ class Api extends Json
      * Set error message.
      *
      * @param  string $message
-     * @return $this
+     * @return self
      * @throws \RuntimeException
      */
     final public function setErrorMessage($message)
@@ -128,7 +127,7 @@ class Api extends Json
      *
      * @param  string $key
      * @param  mixed  $value
-     * @return $this
+     * @return self
      * @throws \InvalidArgumentException
      */
     public function appendContent($key, $value)

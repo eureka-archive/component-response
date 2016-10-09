@@ -15,7 +15,6 @@ use Eureka\Component\Response\Header;
  * Response abstract class
  *
  * @author  Romain Cottard
- * @version 1.0.0
  */
 abstract class Response implements ResponseInterface
 {
@@ -32,14 +31,14 @@ abstract class Response implements ResponseInterface
     /**
      * Send Headers & content
      *
-     * @return $this
+     * @return self
      */
     abstract public function renderContent();
 
     /**
      * Send Headers & content
      *
-     * @return $this
+     * @return self
      */
     final public function send()
     {
@@ -52,8 +51,8 @@ abstract class Response implements ResponseInterface
     /**
      * Set Http Code (200, 301, 404...)
      *
-     * @param  integer $code
-     * @return $this
+     * @param  int $code
+     * @return self
      * @throws \DomainException
      */
     public function setHttpCode($code)
@@ -67,7 +66,7 @@ abstract class Response implements ResponseInterface
      * Add header to the response.
      *
      * @param  Header\Header
-     * @return $this
+     * @return self
      */
     public function addHeader(Header\Header $header)
     {
@@ -90,7 +89,7 @@ abstract class Response implements ResponseInterface
      * Set response content.
      *
      * @param  mixed $content
-     * @return $this
+     * @return self
      */
     public function setContent($content)
     {
@@ -112,7 +111,7 @@ abstract class Response implements ResponseInterface
     /**
      * Send response headers.
      *
-     * @return $this
+     * @return self
      */
     protected function sendHeaders()
     {
@@ -126,7 +125,7 @@ abstract class Response implements ResponseInterface
     /**
      * Send content.
      *
-     * @return $this
+     * @return self
      */
     protected function sendContent()
     {
@@ -134,5 +133,4 @@ abstract class Response implements ResponseInterface
 
         return $this;
     }
-
 }
